@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA Football Studio</title>
+<link rel="icon" href="https://scontent.ftow3-1.fna.fbcdn.net/v/t39.30808-6/435262700_7227555497371314_3067309467847185009_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeH-DHNkLJ3ulsDriNXNHbpCpOMfL_0ZY1Gk4x8v_RljUUZYoCCC-HHe37uggqkNmkgC8aJD-r4u-SWVukXJXZua&_nc_ohc=JACNYD9yQsgAb4loFpT&_nc_ht=scontent.ftow3-1.fna&oh=00_AfBkXEfAmSuoczv0ubQnCX2KfIJQwGZmgtXJxPLO657Iag&oe=6621D405" type="image/x-icon">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: #FFFFFF;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        margin: 50px auto;
+        text-align: center;
+    }
+    .resultado {
+        display: inline-block;
+        position: relative;
+    }
+    .bolinha {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin-left: 10px; /* Adiciona margem à esquerda para separar da mensagem */
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .mensagem {
+        font-size: 24px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .btn {
+        background-color: #009688;
+        color: #FFFFFF;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .btn:hover {
+        background-color: #00796B;
+    }
+    h1 {
+        font-size: 36px;
+    }
+</style>
+</head>
+<body>
+ 
+<div class="container">
+    <h1>IA Football Studio</h1>
+    <button onclick="obterEntrada()" class="btn" id="btn-gerar">Obter Entrada</button>
+    <div id="output"></div>
+</div>
+<script>
+    function obterEntrada() {
+        var btn = document.getElementById("btn-gerar");
+        btn.innerText = "Obtendo entrada...";
+        setTimeout(gerarResultado, 3000); // Chama a função gerarResultado após 5 segundos
+    }
+
+    function gerarResultado() {
+        var output = document.getElementById("output");
+        var btn = document.getElementById("btn-gerar");
+        var resultado = document.createElement("div");
+        resultado.classList.add("resultado");
+
+        // Gera um número aleatório entre 0 e 5
+        var numeroAleatorio = Math.random();
+
+        // Define a cor da bolinha com base no número aleatório
+        if (numeroAleatorio < 0.5) {
+            resultado.innerHTML = '<div class="mensagem" style="color: #FFFFFF;">Entrar</div>';
+            resultado.innerHTML += '<div class="bolinha" style="background-color: #F44336;"></div>';
+        } else {
+            resultado.innerHTML = '<div class="mensagem" style="color: #FFFFFF;">Entrar</div>';
+            resultado.innerHTML += '<div class="bolinha" style="background-color: #2196F3;"></div>';
+        }
+
+        output.appendChild(resultado);
+
+        // Após 10 segundos, limpa o resultado e o texto do botão
+        setTimeout(function() {
+            output.innerHTML = "";
+            btn.innerText = "Obter Entrada";
+        }, 10000);
+    }
+</script>
+</body>
+<iframe src="https://www.b2xbet.net/pb/?openGames=217032-real&gameNames=Football%20Studio" width="100%" height="600px" frameborder="0"></iframe>
+</html>
